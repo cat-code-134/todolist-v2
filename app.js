@@ -7,6 +7,7 @@ const _ = require("lodash");
 // const date = require(__dirname + "/date.js");
 
 const app = express();
+const port = 3000;
 
 app.set('view engine', 'ejs');
 
@@ -70,7 +71,7 @@ app.get("/", function(req, res) {
   });
 
 
-   
+
 
 
 
@@ -198,6 +199,6 @@ app.post("/delete", function(req, res){
 //   res.render("about");
 // });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || port, function() {
   console.log("Server started on port 3000");
 });
